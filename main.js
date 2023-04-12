@@ -50,7 +50,7 @@ function setTime(value) {
 }
 function finishGame(){
     timeEl.parentNode.classList.add("hide")
-    board.innerHTML = `<h2>Ваш рахунок: ${score}</h2>`
+    board.innerHTML = `<h2 class="score">Зібранно: <span >${score}</span> горіхів</h2>`
 }
 function createRandomCircle(){
     const circle = document.createElement("div")
@@ -73,7 +73,6 @@ function getRandomNumber(min,max){
     
 }
 
-console.log(getRandomNumber(0,100));
 reload.addEventListener("click",()=>{
     location.reload()
 })

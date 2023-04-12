@@ -78,7 +78,10 @@ form, label, input {
     overflow: hidden;
     height: 100vh;
     
-    background-image:linear-gradient(99deg,var(--bg1) 0%,var(--bg2)100%) ;
+    background-image:url(./backgroendimage.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
 }
 .screen{
     display: flex;
@@ -148,6 +151,25 @@ form, label, input {
     border-radius: 30px;
     margin-bottom: 20px;
 }
+.board::before{
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: -85px;
+    left: -16px;
+    width: 157px;
+    height: 119px;
+    background-image: url(./belka.webp);
+}
+@media screen and (max-width:768px){
+    .board::before{
+        width:125px ;
+        height: 95px;
+        top: -35px;
+        left: -5px;
+    }
+}
 .game__new{
     margin-bottom: 10px;
     color: var(--white);
@@ -164,5 +186,24 @@ form, label, input {
     position: absolute;
     cursor: pointer;
     background-size: cover;
-    background-image: url(./ball.svg);
+    background-image: url(./acorn.svg);
+    animation: rotate  3s linear infinite ;
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+}
+#time{
+    font-weight: bold;
+   
+}
+.score{
+    color: #5db6e7;
+}
+.score span{
+    color: gold;
 }
